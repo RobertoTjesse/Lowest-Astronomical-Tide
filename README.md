@@ -1,13 +1,19 @@
 # Creation of a database to extract estimated LAT values defined by a study area
 
-In order to provide with calibration geoids for surveing software packages, I have created a small database
+In order to provide calibration geoids for subsea surveing equipment, I have created this guidelines. They tell you how to extract MSS values, or LAT values making use of a small GIS database.
+
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine. 
+These instructions will get you a copy of the database up and running on your local machine. 
 
 ### Prerequisites
 
-You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights. PostgreSQL WITH PostGIS,a relational database with geometry functions to rapidly access heights. PgAdmin3 in order to easily create a database, and to make random checks. QGIS to determine the consistency of the spatial data. 
++ You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights. 
++ PgAdmin3 in order to easily create a database, and to make random checks. QGIS to determine the consistency of the spatial data. 
++ QGIS
++ BLAST
+
+
 ```
 PostgreSQL 9.6 WITH latest PostGIS
 PgAdmin3 (PgAdmin 4 is still a little bit buggy)
