@@ -32,7 +32,7 @@ A step by step series that tell you how to get ayour database up and running
 	ftp://ftp.space.dtu.dk/pub/DTU10/2_MIN/DTU10MSS_2min.xyz.zip
 	ftp://ftp.space.dtu.dk/pub/DTU15/2_MIN/DTU15MSS_2min.xyz.zip)
 	
-4. Open PgAdmin3 and run the following queries to create the database. 
+4. Open the database manager in QGIS, and run the following queries to create the database. 
 
 5. Open QGIS to create a study area polygon.
 
