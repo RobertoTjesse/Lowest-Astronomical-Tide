@@ -18,7 +18,7 @@ QGIS (>2.18)
 
 A step by step series that tell you how to get ayour database up and running
 
-
+'''
 1. Download and install PostgreSQL with PostGIS , PgAdmin3 and QGIS in case you havent yet.
 
 2. Check that the installation by opening PgAdmin 3, creating a new database, and adding the postgis extension.
@@ -39,4 +39,4 @@ A step by step series that tell you how to get ayour database up and running
 
 6. Extract to CSV
 
-
+'''
