@@ -26,11 +26,9 @@ A step by step series that tell you how to get ayour database up and running
 	
 		```
 		CREATE DATABASE dtu_mss;
-	
-	
+		
 		connect dtu_mss;
-		
-		
+			
 		CREATE EXTENSION postgis;
 		```
 
