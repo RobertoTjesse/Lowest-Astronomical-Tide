@@ -9,20 +9,13 @@ These instructions will get you a copy of the database up and running on your lo
 ### Prerequisites
 
 + You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights. 
-+ PgAdmin3 in order to easily create a database, and to make random checks. QGIS to determine the consistency of the spatial data. 
-+ QGIS
-+ BLAST
++ PgAdmin3 (PgAdmin 4 is still a little bit buggy) in order to easily create a database, and to make random checks.  the consistency of the spatial data. 
++ QGIS (>2.18)
++ BLAST more info [here](http://www.blast-project.eu/), find a download link [here](http://blast-project.eu/media.php?file=604)
 
-
-```
-PostgreSQL 9.6 WITH latest PostGIS
-PgAdmin3 (PgAdmin 4 is still a little bit buggy)
-QGIS (>2.18)
-BLAST
-```
 ### Installing
 
-A step by step series that tell you how to get ayour database up and running
+A step by step series that tell you how to get your database up 'n running
 
 
 1. Download and install PostgreSQL with PostGIS , PgAdmin3 and QGIS in case you havent yet.
