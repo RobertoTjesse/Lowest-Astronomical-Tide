@@ -4,21 +4,19 @@ One Paragraph of project description goes here
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine
+These instructions will get you a copy of the project up and running on your local machine. 
 
 ### Prerequisites
 
-You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights.
+You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights. PostgreSQL WITH PostGIS,a relational database with geometry functions to rapidly access heights. PgAdmin3 in order to easily create a database, and to make random checks. QGIS to determine the consistency of the spatial data. 
 ```
-PostgreSQL WITH PostGIS,a relational database with geometry functions to rapidly access heights.
-PgAdmin3 in order to easily create a database, and to make random checks.
-QGIS to determine the consistency of the spatial data. 
+PostgreSQL 9.6 WITH latest PostGIS
+PgAdmin3 (PgAdmin 4 is still a little bit buggy)
+QGIS (>2.18)
 ```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
+A step by step series that tell you how to get ayour database up and running
 
 ```
 1. Download and install PostgreSQL with PostGIS , PgAdmin3 and QGIS in case you havent yet.
