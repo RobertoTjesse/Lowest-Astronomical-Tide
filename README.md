@@ -20,13 +20,15 @@ A step by step series that tell you how to get ayour database up and running
 
 ```
 1. Download and install PostgreSQL with PostGIS , PgAdmin3 and QGIS in case you havent yet.
-
+```
+```
 2. Check that the installation by opening PgAdmin 3, creating a new database, and adding the postgis extension__
 	(i.e, once PgAdmin 3 is open, query the following lines __
 		CREATE DATABASE dtu_mss;__
 		\connect dtu_mss;__
 		CREATE EXTENSION postgis;__
-		
+```
+```
 3. Download and extract the DTU xyz files to be imported. In this script we will import DTU10, DTU 13 and DTU 15 with 2 min, 1 min and 2 min separation respectively from:	
 
 4. Open the database manager in QGIS, and run the following [queries](./queries.sql) to create the database. 
