@@ -24,7 +24,7 @@ A step by step series that tell you how to get ayour database up and running
 2. Check that the installation by opening PgAdmin 3, creating a new database, and adding the postgis extension__
 	(i.e, once PgAdmin 3 is open, query the following lines __
 		```
-		CREATE DATABASE dtu_mss;
+		CREATE DATABASE dtu_mss;__
 		\connect dtu_mss;
 		CREATE EXTENSION postgis;
 		```
