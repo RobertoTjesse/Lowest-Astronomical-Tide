@@ -34,6 +34,7 @@ A step by step series that tell you how to get ayour database up and running
 	
 4. Open the database manager in QGIS, and run the following queries to create the database. 
 
+
 5. Open QGIS to create a study area polygon.
 
 6. Extract to CSV
