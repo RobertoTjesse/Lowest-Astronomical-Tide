@@ -1,7 +1,6 @@
 # Creation of a database to extract estimated LAT values defined by a study area
 
-One Paragraph of project description goes here
-
+In order to provide with calibration geoids for surveing software packages, I have created a small database
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine. 
@@ -13,6 +12,7 @@ You will need PostgreSQL+PostGIS, a relational database with geometry functions 
 PostgreSQL 9.6 WITH latest PostGIS
 PgAdmin3 (PgAdmin 4 is still a little bit buggy)
 QGIS (>2.18)
+BLAST
 ```
 ### Installing
 
