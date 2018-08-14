@@ -1,6 +1,6 @@
 # Creation of a database to extract estimated LAT values defined by a study area
 
-In order to provide calibration geoids for subsea surveing equipment, I have created this guidelines. They tell you how to extract MSS values, or LAT values making use of a small GIS database.
+In order to provide calibration geoids for subsea surveying equipment, I have written this small guidelines. It makes use of a relational database which is common in GIS packages. The steps go from downloading the files to extracting MSS values for a selected area, or LAT values making use of BLAST.
 
 ## Getting Started
 
@@ -39,7 +39,7 @@ A step by step series that tell you how to get your database up 'n running
 	
 	ftp://ftp.space.dtu.dk/pub/DTU15/2_MIN/DTU15MSS_2min.xyz.zip
 	
-4. Open the database manager in QGIS, and run the following [queries](./queries.sql) to create the database. 
+4. Open the database manager in QGIS, and run the following [QUERIES](./queries.sql) to create the database. 
 
 5. Open QGIS to create a study area polygon.
 
