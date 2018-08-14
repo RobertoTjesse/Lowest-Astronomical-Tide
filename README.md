@@ -21,7 +21,7 @@ A step by step series that tell you how to get your database up 'n running
 1. Download and install PostgreSQL with PostGIS , PgAdmin3 and QGIS in case you havent yet
 
 2. Check that the installation by opening PgAdmin 3, creating a new database, and adding the postgis extension
-	(i.e, once PgAdmin 3 is open, query the following lines
+	(i.e, once PgAdmin 3 is open, query the following lines :
 	
 		```
 		CREATE DATABASE dtu_mss;
