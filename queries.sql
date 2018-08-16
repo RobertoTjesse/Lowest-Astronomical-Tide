@@ -35,26 +35,26 @@ COPY dtu13_parse FROM 'E:/dtu10/DTU13MSS_1min.txt' DELIMITER AS '|';
 
 /*Then we create a table with string fields to parse the important data, namely lat lon height*/
 
-CREATE TABLE DTU13_mss1 (lat varchar(8), lon varchar(8), height varchar(7));
-INSERT INTO DTU13_mss1 (lat, lon, height)
+CREATE TABLE DTU13_mss2 (lat varchar(8), lon varchar(8), height varchar(7));
+INSERT INTO DTU13_mss2 (lat, lon, height)
 SELECT substring(data,8,8)As lat, substring(data,18,8)As lon, substring(data,33,7)As height
 FROM dtu13_parse;
 
 /*Afterwards we transform string data to numeric values*/
 
-ALTER TABLE DTU13_mss1 ALTER COLUMN lat TYPE NUMERIC(8,4) USING (lat::numeric);
-ALTER TABLE DTU13_mss1 ALTER COLUMN lon TYPE NUMERIC(8,4) USING (lon::numeric);
-ALTER TABLE DTU13_mss1 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::numeric);
+ALTER TABLE DTU13_mss2 ALTER COLUMN lat TYPE NUMERIC(8,4) USING (lat::numeric);
+ALTER TABLE DTU13_mss2 ALTER COLUMN lon TYPE NUMERIC(8,4) USING (lon::numeric);
+ALTER TABLE DTU13_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::numeric);
 
 /*Do some data muggling (360 to 180-)*/
 
-UPDATE dtu13_mss1 SET lon = lon -360 WHERE lon >= 180 ;   
+UPDATE dtu13_mss2 SET lon = lon -360 WHERE lon >= 180 ;   
 
 /*Adding geometry properties*/ 
 
-ALTER TABLE DTU13_mss1 ADD COLUMN gid serial PRIMARY KEY;
-ALTER TABLE DTU13_mss1 ADD COLUMN geom geometry(POINT,4326);
-UPDATE DTU13_mss1 SET geom = ST_SetSRID(ST_MakePoint(lon,lat),4326);
+ALTER TABLE DTU13_mss2 ADD COLUMN gid serial PRIMARY KEY;
+ALTER TABLE DTU13_mss2 ADD COLUMN geom geometry(POINT,4326);
+UPDATE DTU13_mss2 SET geom = ST_SetSRID(ST_MakePoint(lon,lat),4326);
 --------------------------------------------------------------------------
 /* First we create a table to insert in one column all the data */
 
@@ -88,7 +88,7 @@ UPDATE DTU15_mss2 SET geom = ST_SetSRID(ST_MakePoint(lon,lat),4326);
 */
 ADDING A SPATIAL INDEX
  CREATE INDEX idx_dtu10 ON dtu10_mss2 USING GIST(geom);
- CREATE INDEX idx_dtu13 ON dtu13_mss1 USING GIST(geom);
+ CREATE INDEX idx_dtu13 ON dtu13_mss2 USING GIST(geom);
  CREATE INDEX idx_dtu15 ON dtu15_mss2 USING GIST(geom);
 
 
