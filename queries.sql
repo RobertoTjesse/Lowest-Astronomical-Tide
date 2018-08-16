@@ -20,7 +20,7 @@ ALTER TABLE DTU10_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 
 /*Do some data muggling (360 to 180-)*/
 
-UPDATE dtu10_mss2 SET lon = lon -360 WHERE lon > 180 ;   
+UPDATE dtu10_mss2 SET lon = lon -360 WHERE lon >= 180 ;   
 
 /*Adding geometry properties*/ 
 
@@ -48,7 +48,7 @@ ALTER TABLE DTU13_mss1 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 
 /*Do some data muggling (360 to 180-)*/
 
-UPDATE dtu13_mss1 SET lon = lon -360 WHERE lon > 180 ;   
+UPDATE dtu13_mss1 SET lon = lon -360 WHERE lon >= 180 ;   
 
 /*Adding geometry properties*/ 
 
@@ -77,7 +77,7 @@ ALTER TABLE DTU15_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 
 /*Do some data muggling (360 to 180-)*/
 
-UPDATE dtu15_mss2 SET lon = lon -360 WHERE lon > 180 ;   
+UPDATE dtu15_mss2 SET lon = lon -360 WHERE lon >= 180 ;   
 
 /*Adding geometry properties*/ 
 
