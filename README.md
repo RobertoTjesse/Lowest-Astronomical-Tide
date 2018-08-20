@@ -54,6 +54,7 @@ A step by step series that tell you how to get your database up 'n running
 	
 	
 4. Mouse yourself into PgAdmin3 to dtu/Schemas/Tables(0) and run the following [QUERIES](./queries.sql) to create the database. 
+	![Alt text](/screenshot1.png?raw=true "Optional Title")
 
 5. Go to the DBase manager inside QGIS
 
