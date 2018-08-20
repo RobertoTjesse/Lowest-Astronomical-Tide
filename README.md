@@ -79,5 +79,5 @@ A step by step series that tell you how to get your database up 'n running
 4. Export as CSV/xyz 
 
 
-6. Extract to CSV
+
 
