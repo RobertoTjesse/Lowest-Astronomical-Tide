@@ -100,6 +100,12 @@ A step by step series that tell you how to get your database up 'n running
 	```
 	Title	lat	lon	newheight	country	syst
 	A0001	58.25	2.8667	44.176	8	2
+	A0002	58.25	2.9	44.155	8	2
+	A0003	58.25	2.9333	44.13	8	2
+	A0004	58.25	2.9667	44.106	8	2
+	A0005	58.25	3	44.086	8	2
+	A0006	58.25	3.0333	44.067	8	2
+
 	```
 	
 
