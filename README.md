@@ -91,12 +91,13 @@ A step by step series that tell you how to get your database up 'n running
 
 5. For this we will run the derived MSS file through BLAST
 
-	5.1 To get BLAST running you just need to decompress BLAST in your program file folder. Afterwards make sure to make a folder in
+5. To get BLAST running you just need to decompress BLAST in your program file folder. Afterwards make sure to make a folder in
 	your C drive entitled blastdata ```C:/blastdata``` Inhere paste 2 folders, vrf and masks. They are located in the decompressed blast
 	folder.
-	5.2 Open your CSV file with the MSS values for your study area. Add a new column entitled Title and automatically fill it with a 	increasing index (for example: 1,2,3,4... or A001,A002...)
-	5.3 Export it as a tab delimited file
-	5.5 It should look like
+2. Open your CSV file with the MSS values for your study area. Add a new column entitled Title and automatically fill it with a 
+	increasing index (for example: 1,2,3,4... or A001,A002...)
+5. Export it as a tab delimited file
+5. It should look like
 	```
 	Title	lat	lon	newheight	country	syst
 	A0001	58.25	2.8667	44.176	8	2
@@ -107,13 +108,13 @@ A step by step series that tell you how to get your database up 'n running
 	A0006	58.25	3.0333	44.067	8	2
 	...
 	```
-	5.6 Open the file and add a # in fron of the header
-	5.7 Save the file as data_06.inp
-	5.8 Download the following folder and save it under your examples folder. In my case it is 
+5. Open the file and add a # in fron of the header
+5. Save the file as data_06.inp
+5. Download the following folder and save it under your examples folder. In my case it is 
 	```C:\ProgramFiles\BLAST_height_transformation_tool\blastrafo_release1.1\examples```
-	5.9 Run the example_66.bat
-	6 The resulting data_06.inp.out is your resulting LAT model.
-	6.1 
+5. Run the example_66.bat
+6. The resulting data_06.inp.out is your resulting LAT model.
+6. 
 
 
 
