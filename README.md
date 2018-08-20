@@ -58,12 +58,14 @@ A step by step series that tell you how to get your database up 'n running
 
 	![Alt text](/screenshot1.png?raw=true "Optional Title")
 	
+5. After succesfully running all the queries, keep going.
+	
 
 4. Open QGIS, on the browser, look for the ~~pink~~ blue elephant and right click on it, >Add new PostGIS connection
 	
 	![Alt text](/screenshot2.png?raw=true "Optional Title")
 	
-	Add your usrname and password
+	Add your username and password
 	
 5. Go to the DBase manager inside QGIS
 
@@ -71,7 +73,7 @@ A step by step series that tell you how to get your database up 'n running
 2. Connect to your localhost and database
 
 
-3. Right click on PostGIS and select >Add to canvas to the new study areas
+3. Right click on the created table and select >Add to canvas to the new study areas
 
 
 4. Export as CSV/xyz 
