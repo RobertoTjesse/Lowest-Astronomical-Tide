@@ -22,7 +22,6 @@ A step by step series that tell you how to get your database up 'n running
 	1.1 Follow this link to download PostgreSQL with PostGIS 
 		```
 		https://www.enterprisedb.com/software-downloads-postgres 
-		
 		```
 	Here you need to get EDB Postgres Standard / PostgreSQL >= 9.6
 	
