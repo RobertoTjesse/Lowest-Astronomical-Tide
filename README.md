@@ -25,7 +25,7 @@ A step by step series that tell you how to get your database up 'n running
 		```
 	Here you need to get EDB Postgres Standard / PostgreSQL >= 9.6
 	
-	After having chosen the right location for the program files, make sure yu choose the hard drive where you want to have your 		database. I used an internal Solid State Drive to ease on speed. At the end of the installation you will have the possibility to 	install addons. Here you have the option to install PostGIS and create a sample Database. Do this.
+	After having chosen the right location for the program files, make sure you choose the hard drive where you want to have your 		database. I used an internal Solid State Drive to ease on speed. At the end of the installation you will have the possibility to 	install addons. Here you have the option to install PostGIS and create a sample Database. Do this.
 	
 	1.2 Follow this link to install PgAdmin3
 		```
