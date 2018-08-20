@@ -113,7 +113,14 @@ A step by step series that tell you how to get your database up 'n running
 5. Download the following [folder](ex66.zip) and save it under your examples folder. In my case it is 
 	```C:\ProgramFiles\BLAST_height_transformation_tool\blastrafo_release1.1\examples```
 5. Run the example_66.bat
+
+![Alt text](/screenshot3.png?raw=true "Optional Title")
+
 6. The resulting data_66.inp.out is your resulting LAT model.
+
+7. Now changing the file extension to tsv will allows you to edit it with QGIS, or Excel.
+
+
 
 
 
