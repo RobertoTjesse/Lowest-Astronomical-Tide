@@ -44,6 +44,7 @@ A step by step series that tell you how to get your database up 'n running
 	3.3 Click on dtu/Schemas/Tables(0). This is the place where our new tables will be listed. At the moment its empty. Go back to 		this step to check if you running your steps accordingly.
 	4.1 Minimiz PGadmin3, we will come back soon.
 	
+	
 3. Download and extract the DTU xyz files to be imported. In this script we will import DTU10, DTU 13 and DTU 15 with 2 min separation  from:	
 	```
 	ftp://ftp.space.dtu.dk/pub/DTU13/2_MIN/DTU13MSS_2min.xyz.zip
@@ -54,15 +55,21 @@ A step by step series that tell you how to get your database up 'n running
 	
 	
 4. Mouse yourself into PgAdmin3 to dtu/Schemas/Tables(0) and run the following [QUERIES](./queries.sql) to create the database. 
+
 	![Alt text](/screenshot1.png?raw=true "Optional Title")
+	
 
 5. Go to the DBase manager inside QGIS
 
+
 2. Connect to your localhost and database
+
 
 3. Right click on PostGIS and select >Add to canvas to the new study areas
 
+
 4. Export as CSV/xyz 
+
 
 6. Extract to CSV
 
