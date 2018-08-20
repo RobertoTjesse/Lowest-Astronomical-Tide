@@ -1,6 +1,6 @@
 # Creation of a database to extract estimated LAT values defined by a study area
 
-In order to provide calibration geoids for subsea surveying equipment, I have written this small guideline. It makes use of a relational database which is common in GIS packages called PostgreSQL. The guideline starts from 0 to 100. We will go through extracting MSS values for a selected area, to transform them to LAT values making use of BLAST.
+In order to provide calibration geoids for subsea surveying equipment, I have written this small guideline. It makes use of a relational database which is common in GIS called PostgreSQL. The guideline starts from 0 to 100. We will go through extracting MSS values for a selected area, to transform them to LAT values making use of BLAST.
 
 ## Getting Started
 
@@ -56,7 +56,7 @@ A step by step series that tell you how to get your database up 'n running
 	
 4. Mouse yourself into PgAdmin3 to dtu/Schemas/Tables(0) and run the following [QUERIES](./queries.sql) to create the database. 
 
-	![Alt text](/screenshot1.png?raw=true "Optional Title")
+	![Alt text](/screenshot1.png?raw=true "Optional Title" | width=80))
 	
 5. After succesfully running all the queries, keep going.
 	
