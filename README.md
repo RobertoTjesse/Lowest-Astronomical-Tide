@@ -105,9 +105,15 @@ A step by step series that tell you how to get your database up 'n running
 	A0004	58.25	2.9667	44.106	8	2
 	A0005	58.25	3	44.086	8	2
 	A0006	58.25	3.0333	44.067	8	2
-
+	...
 	```
-	
+	5.6 Open the file and add a # in fron of the header
+	5.7 Save the file as data_06.inp
+	5.8 Download the following folder and save it under your examples folder. In my case it is 
+	```C:\ProgramFiles\BLAST_height_transformation_tool\blastrafo_release1.1\examples```
+	5.9 Run the example_66.bat
+	6 The resulting data_06.inp.out is your resulting LAT model.
+	6.1 
 
 
 
