@@ -38,6 +38,12 @@ A step by step series that tell you how to get your database up 'n running
 		https://qgis.org/en/site/forusers/download.html
 		```
 	The Standalon installer will do for now.
+
+	1.4 Follow this link to get BLAST
+		```
+		http://blast-project.eu/media.php?file=604
+		```
+	
 	
 	2.1 Get PostgresSQL up and running by opening PGAdmin3 and creating a new database. Use a username and password you will 		remember. I used postgres. 
 	2.2 Create a new database by right clicking the already existing database. Dont go for a too fancy name, I went for dtu.
@@ -52,7 +58,9 @@ A step by step series that tell you how to get your database up 'n running
 	ftp://ftp.space.dtu.dk/pub/DTU10/2_MIN/DTU10MSS_2min.xyz.zip
 	
 	ftp://ftp.space.dtu.dk/pub/DTU15/2_MIN/DTU15MSS_2min.xyz.zip
-	
+
+### Make a CSV with MSS (Mean Sea Surface) values
+
 	
 4. Mouse yourself into PgAdmin3 to dtu/Schemas/Tables(0) and run the following [QUERIES](./queries.sql) to create the database. 
 
@@ -76,7 +84,15 @@ A step by step series that tell you how to get your database up 'n running
 3. Right click on the created table and select >Add to canvas to the new study areas
 
 
-4. Export as CSV/xyz 
+4. Export as CSV in case you need to use the model
+
+
+### Make a CSV with LAT (Lowest Astronomical Tide) values
+
+5. For this we will run the derived MSS file through BLAST
+	5.1 In case you 
+
+
 
 
 
