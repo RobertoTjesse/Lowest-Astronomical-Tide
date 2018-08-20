@@ -59,6 +59,12 @@ A step by step series that tell you how to get your database up 'n running
 	![Alt text](/screenshot1.png?raw=true "Optional Title")
 	
 
+4. Open QGIS, on the browser, look for the ~~pink~~ blue elephant and right click on it, >Add new PostGIS connection
+	
+	![Alt text](/screenshot2.png?raw=true "Optional Title")
+	
+	Add your usrname and password
+	
 5. Go to the DBase manager inside QGIS
 
 
