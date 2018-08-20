@@ -1,6 +1,6 @@
 # Creation of a database to extract estimated LAT values defined by a study area
 
-In order to provide calibration geoids for subsea surveying equipment, I have written this small guidelines. It makes use of a relational database which is common in GIS packages. The steps go from downloading the files to extracting MSS values for a selected area, or LAT values making use of BLAST.
+In order to provide calibration geoids for subsea surveying equipment, I have written this small guideline. It makes use of a relational database which is common in GIS packages called PostgreSQL. The guideline starts from 0 to 100. We will go through extracting MSS values for a selected area, to transform them to LAT values making use of BLAST.
 
 ## Getting Started
 
@@ -19,18 +19,30 @@ A step by step series that tell you how to get your database up 'n running
 
 
 1. Download and install PostgreSQL with PostGIS , PgAdmin3 and QGIS in case you havent yet
-
-2. Check that the installation by opening PgAdmin 3, creating a new database, and adding the postgis extension
-	(i.e, once PgAdmin 3 is open, query the following lines :
-	
+	1.1 Follow this link to download PostgreSQL with PostGIS 
 		```
-		CREATE DATABASE dtu_mss;
+		https://www.enterprisedb.com/software-downloads-postgres Here you need to get EDB Postgres Standard / PostgreSQL >= 9.6
 		
-		connect dtu_mss;
-			
-		CREATE EXTENSION postgis;
 		```
-
+	After having chosen the right location for the program files, make sure yu choose the hard drive where you want to have your 		database. I used an internal Solid State Drive to ease on speed. At the end of the installation you will have the possibility to 	install addons. Here you have the option to install PostGIS and create a sample Database. Do this.
+	
+	1.2 Follow this link to install PgAdmin3
+		```
+		https://www.pgadmin.org/download/
+		```
+	At the time I wrote this I wasnt being very succesful with pgAdmin4, hence I recommend pgAdmin3.
+	
+	1.3 Follow this link to install QGIS
+		```
+		https://qgis.org/en/site/forusers/download.html
+		```
+	The Standalon installer will do for now.
+	
+	2.1 Get PostgresSQL up and running by opening PGAdmin3 and creating a new database. Use a username and password you will 		remember. I used postgres. 
+	2.2 Create a new database by right clicking the already existing database. Dont go for a too fancy name, I went for dtu.
+	3.3 Click on dtu/Schemas/Tables(0). This is the place where our new tables will be listed. At the moment its empty. Go back to 		this step to check if you running your steps accordingly.
+	4.1 Minimiz PGadmin3, we will come back soon.
+	
 3. Download and extract the DTU xyz files to be imported. In this script we will import DTU10, DTU 13 and DTU 15 with 2 min separation  from:	
 	```
 	ftp://ftp.space.dtu.dk/pub/DTU13/2_MIN/DTU13MSS_2min.xyz.zip
@@ -40,7 +52,7 @@ A step by step series that tell you how to get your database up 'n running
 	ftp://ftp.space.dtu.dk/pub/DTU15/2_MIN/DTU15MSS_2min.xyz.zip
 	
 	
-4. Open the database manager in QGIS, and run the following [QUERIES](./queries.sql) to create the database. 
+4. Mouse yourself into PgAdmin3 to dtu/Schemas/Tables(0) and run the following [QUERIES](./queries.sql) to create the database. 
 
 5. Go to the DBase manager inside QGIS
 
