@@ -23,17 +23,11 @@ ALTER TABLE DTU10_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 /*Here we do some data muggling in order to transform the TOPEX coordinate system, to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7m to the height values to adapt to 
 the WGS84  ellipsoid.*/
 
-UPDATE dtu10_mss2 SET lon = lon -360 WHERE lon >= 180 ;  
+UPDATE dtu10_mss2 SET lon = lon -180 ;  
 ALTER TABLE dtu10_mss2
 ADD COLUMN newheight varchar;
 UPDATE dtu10_mss2 SET newheight = height -0.7;                                                                        
-                                                                     
-/*In case we want to run the data through BLAST, we already insert the static indices it needs. columns*/
-
-ALTER TABLE lat_dtu10 ADD COLUMN Country integer;
-ALTER TABLE lat_dtu10 ADD COLUMN Syst integer;
-UPDATE lat_dtu10 SET Syst = 2 ;
-UPDATE lat_dtu10 SET Country = 8 ;                                                                     
+                                                                                                                                   
                                            
 /*Adding geometry properties*/ 
 
@@ -47,7 +41,18 @@ CREATE TABLE NAME_OF_NEWTABLE AS(SELECT * FROM NAME_OF_POINTTABLE  WHERE geom &&
 CREATE TABLE DTU10_BALTIC AS(SELECT * FROM dtu10_mss2  WHERE geom && ST_MakeEnvelope(8.8498963749078907,52.8723845733182998,34.5668618090039033,66.5277591033835023,4326 ));
 CREATE TABLE DTU10_NORTHSEA AS(SELECT * FROM dtu10_mss2  WHERE geom && ST_MakeEnvelope(-16.4937176894747992,42.6980038817051977,13.8900195517934009,59.8250856833049980,4326 ));
 
-/*Now we can visualize the mean sea surface derived from the dtu in our study areas */                                                                                 
+/*Now we can visualize the mean sea surface derived from the dtu in our study areas */         
+                                                                                       
+ /*In case we want to run the data through BLAST, we already insert the static indices it needs. columns*/
+
+ALTER TABLE DTU10_BALTIC ADD COLUMN Country integer;
+ALTER TABLE DTU10_BALTIC ADD COLUMN Syst integer;
+UPDATE DTU10_BALTIC SET Syst = 2 ;
+UPDATE DTU10_BALTIC SET Country = 8 ;                                                                                       
+ALTER TABLE DTU10_BALTIC ADD COLUMN Country integer;
+ALTER TABLE DTU10_BALTIC ADD COLUMN Syst integer;
+UPDATE DTU10_BALTIC SET Syst = 2 ;
+UPDATE DTU10_BALTIC SET Country = 8 ;               
                                                                                        
 -----------------------------------dtu13--------------------------------------------------------------------------------------------------                                                                                       
    
@@ -75,17 +80,10 @@ ALTER TABLE dtu13_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 /*Here we do some data muggling in order to transform the TOPEX coordinate system, to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7m to the height values to adapt to 
 the WGS84  ellipsoid.*/
 
-UPDATE dtu13_mss2 SET lon = lon -360 WHERE lon >= 180 ;  
+UPDATE dtu13_mss2 SET lon = lon -180 ;  
 ALTER TABLE dtu13_mss2
 ADD COLUMN newheight varchar;
-UPDATE dtu13_mss2 SET newheight = height -0.7;                                                                        
-                                                                     
-/*In case we want to run the data through BLAST, we already insert the static indices it needs. columns*/
-
-ALTER TABLE lat_dtu13 ADD COLUMN Country integer;
-ALTER TABLE lat_dtu13 ADD COLUMN Syst integer;
-UPDATE lat_dtu13 SET Syst = 2 ;
-UPDATE lat_dtu13 SET Country = 8 ;                                                                     
+UPDATE dtu13_mss2 SET newheight = height -0.7;                                                                                                                                     
                                            
 /*Adding geometry properties*/ 
 
@@ -99,7 +97,19 @@ CREATE TABLE NAME_OF_NEWTABLE AS(SELECT * FROM NAME_OF_POINTTABLE  WHERE geom &&
 CREATE TABLE dtu13_BALTIC AS(SELECT * FROM dtu13_mss2  WHERE geom && ST_MakeEnvelope(8.8498963749078907,52.8723845733182998,34.5668618090039033,66.5277591033835023,4326 ));
 CREATE TABLE dtu13_NORTHSEA AS(SELECT * FROM dtu13_mss2  WHERE geom && ST_MakeEnvelope(-16.4937176894747992,42.6980038817051977,13.8900195517934009,59.8250856833049980,4326 ));
 
-/*Now we can visualize the mean sea surface derived from the dtu in our study areas */                                                                                 
+                                                                                       
+/*Now we can visualize the mean sea surface derived from the dtu in our study areas */     
+                                                                                       
+ /*In case we want to run the data through BLAST, we already insert the static indices it needs. columns*/
+
+ALTER TABLE dtu13_BALTIC ADD COLUMN Country integer;
+ALTER TABLE dtu13_BALTIC ADD COLUMN Syst integer;
+UPDATE dtu13_BALTIC SET Syst = 2 ;
+UPDATE dtu13_BALTIC SET Country = 8 ;         
+ALTER TABLE dtu13_NORTHSEA ADD COLUMN Country integer;
+ALTER TABLE dtu13_NORTHSEA ADD COLUMN Syst integer;
+UPDATE dtu13_NORTHSEA SET Syst = 2 ;
+UPDATE dtu13_NORTHSEA SET Country = 8 ;                                                                                          
                                                                                        
   -----------------------------------dtu15--------------------------------------------------------------------------------------------------                                                                                       
 
@@ -128,7 +138,7 @@ ALTER TABLE dtu15_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 /*Here we do some data muggling in order to transform the TOPEX coordinate system, to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7m to the height values to adapt to 
 the WGS84  ellipsoid.*/
 
-UPDATE dtu15_mss2 SET lon = lon -360 WHERE lon >= 180 ;  
+UPDATE dtu15_mss2 SET lon = lon -180 ;  
 ALTER TABLE dtu15_mss2
 ADD COLUMN newheight varchar;
 UPDATE dtu15_mss2 SET newheight = height -0.7;                                                                        
@@ -152,4 +162,15 @@ CREATE TABLE NAME_OF_NEWTABLE AS(SELECT * FROM NAME_OF_POINTTABLE  WHERE geom &&
 CREATE TABLE dtu15_BALTIC AS(SELECT * FROM dtu15_mss2  WHERE geom && ST_MakeEnvelope(8.8498963749078907,52.8723845733182998,34.5668618090039033,66.5277591033835023,4326 ));
 CREATE TABLE dtu15_NORTHSEA AS(SELECT * FROM dtu15_mss2  WHERE geom && ST_MakeEnvelope(-16.4937176894747992,42.6980038817051977,13.8900195517934009,59.8250856833049980,4326 ));
 
-/*Now we can visualize the mean sea surface derived from the dtu in our study areas */      
+/*Now we can visualize the mean sea surface derived from the dtu in our study areas */
+                                                                                       
+/*In case we want to run the data through BLAST, we already insert the static indices it needs. columns*/
+                                                                                       
+ALTER TABLE dtu15_BALTIC ADD COLUMN Country integer;
+ALTER TABLE dtu15_BALTIC ADD COLUMN Syst integer;
+UPDATE dtu15_BALTIC SET Syst = 2 ;
+UPDATE dtu15_BALTIC SET Country = 8 ;    
+ALTER TABLE dtu15_NORTHSEA ADD COLUMN Country integer;
+ALTER TABLE dtu15_NORTHSEA ADD COLUMN Syst integer;
+UPDATE dtu15_NORTHSEA SET Syst = 2 ;
+UPDATE dtu15_NORTHSEA SET Country = 8 ;                                                                                      
