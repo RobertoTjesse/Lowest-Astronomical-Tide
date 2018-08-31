@@ -2,9 +2,6 @@
 /*First we create a table which we will use to parse individual columns. We also create the postgis extension inside the database to make sure its there.
  This is a standard procedure to copy values from a fixed space table into postgresql. Replace path to file as shown here*/ 
 
-
-
-
 CREATE temporary TABLE dtu10_parse(data text); 
 COPY dtu10_parse FROM 'E:/dtu10/DTU10MSS_2min.xyz' DELIMITER AS E'|';
 
