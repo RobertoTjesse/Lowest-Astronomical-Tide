@@ -2,19 +2,23 @@
 /*First we create a table which we will use to parse individual columns. We also create the postgis extension inside the database to make sure its there.
  This is a standard procedure to copy values from a fixed space table into postgresql. Replace path to file as shown here*/ 
 
-CREATE TABLE dtu10_parse(data text); CREATE EXTENSION postgis; 
-COPY dtu10_parse FROM 'E:/dtu10/DTU10MSS_2min.txt' DELIMITER AS '|';
+
+
+
+CREATE temporary TABLE dtu10_parse(data text); 
+COPY dtu10_parse FROM 'E:/dtu10/DTU10MSS_2min.xyz' DELIMITER AS E'|';
 
 /*Then we create a table that will be populated with the the important data, namely lat lon height. We populate the fields by making use of the substring function.
 SUBSTRING ( string ,start_position , length ). Literally, it begins reading each row at a certain point and acquires the amount of values you tell him. It copies this to each cell, and jumps to the next one.*/
 
-CREATE TABLE DTU10_mss2 (lat varchar(8), lon varchar(8), height varchar(7));
-INSERT INTO DTU10_mss2 (lat, lon, height)
-SELECT substring(data,8,8)As lat, substring(data,18,8)As lon, substring(data,33,7)As height
-FROM dtu10_parse;
+CREATE TABLE DTU10_mss2 (title varchar (5),lat varchar(8), lon varchar(8), height varchar(7));
+	SELECT  array_to_string ((regexp_split_to_array(data, '\s+'))[1:1], ' ') As title,
+		array_to_string ((regexp_split_to_array(data, '\s+'))[2:2], ' ') As lat,
+		array_to_string ((regexp_split_to_array(data, '\s+'))[3:3], ' ') As lon,
+		array_to_string ((regexp_split_to_array(data, '\s+'))[5:5], ' ') As height
+	FROM dtu10_parse;
 
 /*Afterwards we transform the string columns to numeric values. This will allow us to further process it as numbers.*/
-
 
 ALTER TABLE DTU10_mss2 ALTER COLUMN lat TYPE NUMERIC(8,4) USING (lat::numeric);
 ALTER TABLE DTU10_mss2 ALTER COLUMN lon TYPE NUMERIC(8,4) USING (lon::numeric);
@@ -23,10 +27,10 @@ ALTER TABLE DTU10_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 /*Here we do some data muggling in order to transform the TOPEX coordinate system, to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7m to the height values to adapt to 
 the WGS84  ellipsoid.*/
 
-UPDATE dtu10_mss2 SET lon = lon -180 ;  
+	UPDATE dtu10_mss2 SET lon = lon -180 ;  
 ALTER TABLE dtu10_mss2
-ADD COLUMN newheight varchar;
-UPDATE dtu10_mss2 SET newheight = height -0.7;                                                                        
+	ADD COLUMN newheight varchar;
+	UPDATE dtu10_mss2 SET newheight = height -0.7;                                                                        
                                                                                                                                    
                                            
 /*Adding geometry properties*/ 
@@ -37,7 +41,6 @@ UPDATE DTU10_mss2 SET geom = ST_SetSRID(ST_MakePoint(lon,lat),4326);
                                                                         
 /*We define the study areas of interest and create our tables */
 
-CREATE TABLE NAME_OF_NEWTABLE AS(SELECT * FROM NAME_OF_POINTTABLE  WHERE geom && ST_MakeEnvelope((xmin,ymin,xmax,ymax,srid) ));
 CREATE TABLE DTU10_BALTIC AS(SELECT * FROM dtu10_mss2  WHERE geom && ST_MakeEnvelope(8.8498963749078907,52.8723845733182998,34.5668618090039033,66.5277591033835023,4326 ));
 CREATE TABLE DTU10_NORTHSEA AS(SELECT * FROM dtu10_mss2  WHERE geom && ST_MakeEnvelope(-16.4937176894747992,42.6980038817051977,13.8900195517934009,59.8250856833049980,4326 ));
 
@@ -45,15 +48,16 @@ CREATE TABLE DTU10_NORTHSEA AS(SELECT * FROM dtu10_mss2  WHERE geom && ST_MakeEn
                                                                                        
  /*In case we want to run the data through BLAST, we already insert the static indices it needs. columns*/
 
-ALTER TABLE DTU10_BALTIC ADD COLUMN Country integer;
-ALTER TABLE DTU10_BALTIC ADD COLUMN Syst integer;
-UPDATE DTU10_BALTIC SET Syst = 2 ;
-UPDATE DTU10_BALTIC SET Country = 8 ;                                                                                       
-ALTER TABLE DTU10_BALTIC ADD COLUMN Country integer;
-ALTER TABLE DTU10_BALTIC ADD COLUMN Syst integer;
-UPDATE DTU10_BALTIC SET Syst = 2 ;
-UPDATE DTU10_BALTIC SET Country = 8 ;               
-                                                                                       
+ALTER TABLE DTU10_BALTIC ADD COLUMN country integer;
+ALTER TABLE DTU10_BALTIC ADD COLUMN syst integer;
+	UPDATE DTU10_BALTIC SET Syst = 4 ;
+	UPDATE DTU10_BALTIC SET Country = 8 ;                      
+ALTER TABLE DTU10_NORTHSEA ADD COLUMN country integer;
+ALTER TABLE DTU10_NORTHSEA ADD COLUMN syst integer;
+	UPDATE DTU10_NORTHSEA SET syst = 4 ;
+	UPDATE DTU10_NORTHSEA SET country = 8 ;    
+COPY DTU10_BALTIC(title,lat,lon,height,country,syst) to 'E:\example_06.inp' WITH DELIMITER E'\t';  
+																					   
 -----------------------------------dtu13--------------------------------------------------------------------------------------------------                                                                                       
    
 /*First we create a table which we will use to parse individual columns. We also create the postgis extension inside the database to make sure its there.
