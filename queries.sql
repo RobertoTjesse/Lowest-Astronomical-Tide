@@ -26,7 +26,7 @@ ALTER TABLE DTU10_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 /*Here we do some data muggling in order to transform the TOPEX coordinate system to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7m to the height values to adapt to 
 the WGS84  ellipsoid.*/
 
-	UPDATE dtu10_mss2 SET lon = lon -180 ;  
+	UPDATE dtu10_mss2 SET lon = lon -360 WHERE lon > 180 ;  
 ALTER TABLE dtu10_mss2
 	ADD COLUMN newheight NUMERIC;
 	UPDATE dtu10_mss2 SET newheight = height -0.7;                                                                        
@@ -55,7 +55,8 @@ ALTER TABLE DTU10_NORTHSEA ADD COLUMN country integer;
 ALTER TABLE DTU10_NORTHSEA ADD COLUMN syst integer;
 	UPDATE DTU10_NORTHSEA SET syst = 4 ;
 	UPDATE DTU10_NORTHSEA SET country = 8 ;    
-COPY DTU10_BALTIC(title,lat,lon,height,country,syst) to 'E:\example_06.inp' WITH DELIMITER E'\t';  
+	
+COPY DTU10_NORTHSEA(title,lat,lon,newheight,country,syst) to 'E:\example_06.inp' WITH DELIMITER E'\t';  
 																					   
 -----------------------------------dtu13--------------------------------------------------------------------------------------------------                                                                                       
 
@@ -85,7 +86,7 @@ ALTER TABLE DTU13_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 /*Here we do some data muggling in order to transform the TOPEX coordinate system, to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7m to the height values to adapt to 
 the WGS84  ellipsoid.*/
 
-	UPDATE DTU13_mss2 SET lon = lon -180 ;  
+	UPDATE dtu10_mss2 SET lon = lon -360 WHERE lon >=180 ;  
 ALTER TABLE DTU13_mss2
 	ADD COLUMN newheight varchar;
 	UPDATE DTU13_mss2 SET newheight = height -0.7;                                                                        
@@ -144,7 +145,7 @@ ALTER TABLE DTU15_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 /*Here we do some data muggling in order to transform the TOPEX coordinate system, to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7m to the height values to adapt to 
 the WGS84  ellipsoid.*/
 
-	UPDATE DTU15_mss2 SET lon = lon -180 ;  
+	UPDATE dtu10_mss2 SET lon = lon -360 WHERE lon >=180 ;  
 ALTER TABLE DTU15_mss2
 	ADD COLUMN newheight varchar;
 	UPDATE DTU15_mss2 SET newheight = height -0.7;                                                                        
