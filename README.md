@@ -55,9 +55,7 @@ A step by step series that tell you how to get your database up 'n running
 	```
 	ftp://ftp.space.dtu.dk/pub/DTU13/2_MIN/DTU13MSS_2min.xyz.zip
 	
-	ftp://ftp.space.dtu.dk/pub/DTU10/2_MIN/DTU10MSS_2min.xyz.zip
 	
-	ftp://ftp.space.dtu.dk/pub/DTU15/2_MIN/DTU15MSS_2min.xyz.zip
 
 ### Make a CSV with MSS (Mean Sea Surface) values
 
