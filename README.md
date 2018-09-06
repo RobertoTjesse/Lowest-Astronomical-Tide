@@ -106,7 +106,7 @@ These instructions will get you a copy of the database up and running on your lo
 	```
 5. Open the file and add a # in fron of the header
 5. Save the file as data_06.inp
-5. Download the following [folder](dtu_lat.zip) and save it under your examples folder. In my case it is 
+5. Download the following [folder](dtu_lat.7z) and save it under your examples folder. In my case it is 
 	```C:\ProgramFiles\BLAST_height_transformation_tool\blastrafo_release1.1\examples```
 5. Run the example_66.bat
 
