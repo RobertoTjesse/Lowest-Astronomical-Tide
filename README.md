@@ -15,8 +15,6 @@ These instructions will get you a copy of the database up and running on your lo
 
 ### Installing
 
-A step by step series that tell you how to get your database up 'n running
-
 
 1. Download and install PostgreSQL with PostGIS , PgAdmin3 and QGIS in case you havent yet
 	1.1 Follow this link to download PostgreSQL with PostGIS 
