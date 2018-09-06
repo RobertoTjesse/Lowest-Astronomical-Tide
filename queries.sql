@@ -1,4 +1,4 @@
------------------------------------dtu10--------------------------------------------------------------------------------------------------                                                                                       
+-----------------------------------dtu10
 
 /*First we create a table which we will use to parse individual columns. We also create the postgis extension inside the database to make sure its there.
  This is a standard procedure to copy values from a fixed space table into postgresql. The update query replaces any kind of number of spaces into one space. This makes handling easier in following steps. Replace path to file as shown here*/ 
@@ -22,14 +22,7 @@ FROM   dtu10_parse;
 ALTER TABLE DTU10_mss2 ALTER COLUMN lat TYPE NUMERIC(8,4) USING (lat::numeric);
 ALTER TABLE DTU10_mss2 ALTER COLUMN lon TYPE NUMERIC(8,4) USING (lon::numeric);
 ALTER TABLE DTU10_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::numeric);
-
-/*Here we do some data muggling in order to transform the TOPEX coordinate system to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7 m to the height values to adapt to the WGS84  ellipsoid.*/
-
-	                                                                     
-ALTER TABLE dtu10_mss2
-	ADD COLUMN newheight NUMERIC;
-	UPDATE dtu10_mss2 SET newheight = height -0.7;                                                                        
-                                                                                                                                   
+                                                                                                                                                                                        
                                            
 /*Adding geometry properties*/ 
 
@@ -37,6 +30,14 @@ ALTER TABLE DTU10_mss2 ADD COLUMN gid serial PRIMARY KEY;
 ALTER TABLE DTU10_mss2 ADD COLUMN geom geometry(POINT,4326);
 UPDATE DTU10_mss2 SET geom = ST_SetSRID(ST_MakePoint(lon,lat),4326);
 UPDATE DTU10_mss2 SET lon = ST_X(geom::geometry);   
+													       
+
+/*Here we do some data muggling in order to transform the TOPEX coordinate system to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7 m to the height values to adapt to the WGS84  ellipsoid.*/
+
+	                                                                     
+ALTER TABLE dtu10_mss2
+ADD COLUMN newheight NUMERIC;
+UPDATE dtu10_mss2 SET newheight = height -0.7;  													       
                                                                         
 /*We define the study areas of interest and create our tables */
 
@@ -56,5 +57,5 @@ ALTER TABLE DTU10_NORTHSEA ADD COLUMN syst integer;
 	UPDATE DTU10_NORTHSEA SET syst = 4 ;
 	UPDATE DTU10_NORTHSEA SET country = 8 ;    
 	
-COPY DTU10_NORTHSEA(station,lat,lon,newheight,country,syst) to 'E:\example_06.inp' WITH DELIMITER E'\t';  
+COPY DTU10_NORTHSEA(station,lat,lon,newheight,country,syst) to 'E:\nsea_mss.inp' WITH DELIMITER E'\t';  
 																					   
