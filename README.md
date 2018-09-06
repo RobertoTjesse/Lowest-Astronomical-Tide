@@ -114,7 +114,7 @@ These instructions will get you a copy of the database up and running on your lo
 
 6. The resulting data_66.inp.out is your resulting LAT model.
 
-7. Now changing the file extension to tsv will allows you to edit it with QGIS, or Excel.
+7. Open it with EXCEL in order to edit the variable space between columns and save it a flatsimple CSV.	
 
 
 
