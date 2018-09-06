@@ -35,7 +35,7 @@ These instructions will get you a copy of the database up and running on your lo
 		```
 		https://qgis.org/en/site/forusers/download.html
 		```
-	The Standalon installer will do for now.
+	The Standalone installer will do for now.
 
 	1.4 Follow this link to get BLAST
 		```
@@ -43,10 +43,10 @@ These instructions will get you a copy of the database up and running on your lo
 		```
 	
 	
-	2.1 Get PostgresSQL up and running by opening PGAdmin3 and creating a new database. Use a username and password you will 		remember. I used postgres. 
-	2.2 Create a new database by right clicking the already existing database. Dont go for a too fancy name, I went for dtu.
-	3.3 Click on dtu/Schemas/Tables(0). This is the place where our new tables will be listed. At the moment its empty. Go back to 		this step to check if you running your steps accordingly.
-	4.1 Minimiz PGadmin3, we will come back soon.
+	2.1 Get PostgresSQL running by opening PGAdmin3 and creating a new database. Use a username and password you will 		remember. 
+	2.2 Create a new database by right clicking the already existing database. 
+	3.3 Click on dtu/Schemas/Tables(0). This is the place where our new tables will be listed. At the moment its empty. Go back to 		this step to check if you are running your steps accordingly.
+	4.1 Minimize PGadmin3, we will come back soon.
 	
 	
 3. Download and extract the DTU xyz files to be imported. In this script we will import DTU10, DTU 13 and DTU 15 with 2 min separation  from:	
