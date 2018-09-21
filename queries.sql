@@ -28,7 +28,7 @@ ALTER TABLE DTU10_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::nume
 
 ALTER TABLE DTU10_mss2 ADD COLUMN gid serial PRIMARY KEY;
 ALTER TABLE DTU10_mss2 ADD COLUMN geom geometry(POINT,4326);
-UPDATE DTU10_mss2 SET geom = ST_SetSRID(ST_MakePoint(lon,lat),4326);
+UPDATE DTU10_mss2 SET geom = St_ShiftLongitude(ST_SetSRID(ST_MakePoint(lon,lat),4326));
 UPDATE DTU10_mss2 SET lon = ST_X(geom::geometry);   
 													       
 
