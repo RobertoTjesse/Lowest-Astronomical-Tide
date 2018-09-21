@@ -25,28 +25,28 @@ These instructions will get you a copy of the database up and running on your lo
 	
 	After having chosen the right location for the program files, make sure you choose the hard drive where you want to have your 		database. I used an internal Solid State Drive to ease on speed. At the end of the installation you will have the possibility to 	install addons. Here you have the option to install PostGIS and create a sample Database. Do this.
 	
-	1. Follow this link to install PgAdmin3
+	2. Follow this link to install PgAdmin3
 		```
 		https://www.pgadmin.org/download/
 		```
 	At the time I wrote this I wasnt being very succesful with pgAdmin4, hence I recommend pgAdmin3.
 	
-	1. Follow this link to install QGIS
+	3. Follow this link to install QGIS
 		```
 		https://qgis.org/en/site/forusers/download.html
 		```
 	The Standalone installer will do for now.
 
-	1. Follow this link to get BLAST
+	4. Follow this link to get BLAST
 		```
 		http://blast-project.eu/media.php?file=604
 		```
 	
 	
-	2. Get PostgresSQL running by opening PGAdmin3 and creating a new database. Use a username and password you will 		remember. 
-	2. Create a new database by right clicking the already existing database. 
-	3. Click on dtu/Schemas/Tables(0). This is the place where our new tables will be listed. At the moment its empty. Go back to 		this step to check if you are running your steps accordingly.
-	4. Minimize PGadmin3, we will come back soon.
+	5. Get PostgresSQL running by opening PGAdmin3 and creating a new database. Use a username and password you will 		remember. 
+	6. Create a new database by right clicking the already existing database. 
+	7. Click on dtu/Schemas/Tables(0). This is the place where our new tables will be listed. At the moment its empty. Go back to 		this step to check if you are running your steps accordingly.
+	8. Minimize PGadmin3, we will come back soon.
 	
 	
 3. Download and extract the DTU xyz files to be imported. In this script we will import DTU10, DTU 13 and DTU 15 with 2 min separation  from:	
