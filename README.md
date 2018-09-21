@@ -38,9 +38,7 @@ These instructions will get you a copy of the database up and running on your lo
 	The Standalone installer will do for now.
 
 	4. Follow this link to get BLAST
-		```
-		http://blast-project.eu/media.php?file=604
-		```
+		```http://blast-project.eu/media.php?file=604```
 	
 	
 	5. Get PostgresSQL running by opening PGAdmin3 and creating a new database. Use a username and password you will 		remember. 
