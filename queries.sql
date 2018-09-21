@@ -22,22 +22,19 @@ FROM   dtu10_parse;
 ALTER TABLE DTU10_mss2 ALTER COLUMN lat TYPE NUMERIC(8,4) USING (lat::numeric);
 ALTER TABLE DTU10_mss2 ALTER COLUMN lon TYPE NUMERIC(8,4) USING (lon::numeric);
 ALTER TABLE DTU10_mss2 ALTER COLUMN height TYPE NUMERIC(7,3) USING (height::numeric);
-                                                                                                                                                                                        
-                                           
-/*Adding geometry properties*/ 
+                                                                                                                                                                                                                                 
+/*Adding geometry properties and toggle 360 to -180 to 180*/ 
 
 ALTER TABLE DTU10_mss2 ADD COLUMN gid serial PRIMARY KEY;
 ALTER TABLE DTU10_mss2 ADD COLUMN geom geometry(POINT,4326);
 UPDATE DTU10_mss2 SET geom = St_ShiftLongitude(ST_SetSRID(ST_MakePoint(lon,lat),4326));
-UPDATE DTU10_mss2 SET lon = ST_X(geom::geometry);   
-													       
+UPDATE DTU10_mss2 SET lon = ST_X(geom::geometry);        
 
 /*Here we do some data muggling in order to transform the TOPEX coordinate system to WGS84. This begins with transforming longitudes ranging from 0,360 to a -180,180 scale, and substracting 0.7 m to the height values to adapt to the WGS84  ellipsoid.*/
-
 	                                                                     
 ALTER TABLE dtu10_mss2
 ADD COLUMN newheight NUMERIC;
-UPDATE dtu10_mss2 SET newheight = height -0.7;  													       
+UPDATE dtu10_mss2 SET newheight = height - 0.7;  													       
                                                                         
 /*We define the study areas of interest and create our tables */
 
