@@ -38,7 +38,9 @@ These instructions will get you a copy of the database up and running on your lo
 	The Standalone installer will do for now.
 
 	4. Follow this link to get BLAST
-		```http://blast-project.eu/media.php?file=604```
+		```
+		http://blast-project.eu/media.php?file=604
+		```
 	
 	
 	5. Get PostgresSQL running by opening PGAdmin3 and creating a new database. Use a username and password you will 		remember. 
@@ -50,8 +52,7 @@ These instructions will get you a copy of the database up and running on your lo
 3. Download and extract the DTU xyz files to be imported. In this script we will import DTU10, DTU 13 and DTU 15 with 2 min separation  from:	
 	```
 	ftp://ftp.space.dtu.dk/pub/DTU13/2_MIN/DTU13MSS_2min.xyz.zip
-	
-	
+	```
 
 ### Make a CSV with MSS (Mean Sea Surface) values
 
