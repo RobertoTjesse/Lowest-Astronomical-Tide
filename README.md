@@ -1,19 +1,14 @@
 # Obtaining a LAT model for a defined study area
 
-In order to provide calibration geoids for subsea surveying data processing, I have written this small guideline. It makes use of a relational database which is common in GIS called PostgreSQL to obtain LAT values. As each country has is own LAT model, this guideline makes use of BLAST to have a European solution. 
-
-While the usual process starts by acquiring a Mean Sea Surface ellipsoid, correcting . The guideline starts from 0 to 100. We will go through extracting MSS values for a selected area, to transform them to LAT values making use of BLAST.
-
-## Getting Started
-
-These instructions will get you a copy of the database up and running on your local machine. 
+In order to provide calibration geoids for subsea surveying data processing, I have written this small guideline. As each country has is own LAT model, this guideline makes use of BLAST to have a European solution. This does not mean this is an autorative correct LAT model. It is just a generalized LAT model for the globe.
 
 ### Prerequisites
 
-+ You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights
-+ PgAdmin3 (PgAdmin 4 is still a little bit buggy) in order to easily create a database, and to make random checks
++ You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights, study areas and make small calculations
++ PgAdmin3 (PgAdmin 4 is still a little bit buggy) in order to manage your own database
 + QGIS (>2.18)
 + BLAST more info [here](http://www.blast-project.eu/), find a download link [here](http://blast-project.eu/media.php?file=604)
++ GUT (GOCE User Toolbox) , find it [here](https://earth.esa.int/web/guest/software-tools/gut/about-gut/overview)
 
 ### Installing
 
@@ -43,7 +38,7 @@ These instructions will get you a copy of the database up and running on your lo
 		```
 		http://blast-project.eu/media.php?file=604
 		```
-	
+	5. Download GUT , find it [here](https://earth.esa.int/web/guest/software-tools/gut/download-gut-here)
 	
 	5. Get PostgresSQL running by opening PGAdmin3 and creating a new database. Use a username and password you will 		remember. 
 	6. Create a new database by right clicking the already existing database. 
