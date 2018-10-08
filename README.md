@@ -1,6 +1,8 @@
-# Creation of a PostgreSQL database to extract estimated mss values defined by a study area prior to BLAST processing
+# Using GOCE, PostgreSQL, QGIS and BLAST to extract LAT values for a defined study area
 
-In order to provide calibration geoids for subsea surveying equipment, I have written this small guideline. It makes use of a relational database which is common in GIS called PostgreSQL. The guideline starts from 0 to 100. We will go through extracting MSS values for a selected area, to transform them to LAT values making use of BLAST.
+In order to provide calibration geoids for subsea surveying data processing, I have written this small guideline. It makes use of a relational database which is common in GIS called PostgreSQL to obtain LAT values. As each country has is own LAT model, this guideline makes use of BLAST to have a European solution. 
+
+While the usual process starts by acquiring a Mean Sea Surface ellipsoid, correcting . The guideline starts from 0 to 100. We will go through extracting MSS values for a selected area, to transform them to LAT values making use of BLAST.
 
 ## Getting Started
 
