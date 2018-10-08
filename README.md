@@ -1,4 +1,4 @@
-# Using GOCE, PostgreSQL, QGIS and BLAST to extract LAT values for a defined study area
+# Obtaining a LAT model for a defined study area
 
 In order to provide calibration geoids for subsea surveying data processing, I have written this small guideline. It makes use of a relational database which is common in GIS called PostgreSQL to obtain LAT values. As each country has is own LAT model, this guideline makes use of BLAST to have a European solution. 
 
