@@ -1,7 +1,6 @@
 # Obtaining a LAT model for a defined study area
 
-In order to provide calibration geoids for subsea surveying data processing, I have written this small guideline. As each country has is own LAT model, this guideline makes use of BLAST to have a European solution. This does not mean this is an autorative correct LAT model. It is just a generalized LAT model for the globe.
-
+In order to provide calibration geoids for subsea surveying data processing, I have written this small guideline. While each country has is own LAT model, this guideline makes use of BLAST to have a European solution. This does not mean this is an autorative correct LAT model. It is just a generalized LAT model that fits Europe better than other seas.
 ### Prerequisites
 
 + You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights, study areas and make small calculations
