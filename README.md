@@ -2,7 +2,7 @@
 
 In order to provide calibration geoids for subsea surveying data post-processing in European projects that need a common **Zero level** I created this small workflow/guideline. Use with care.
 
-### Prerequisites
+## Prerequisites
 
 + You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights, study areas and make basic calculations
 + PgAdmin3 (PgAdmin 4 is still a little bit buggy) in order to manage your own database
