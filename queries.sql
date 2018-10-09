@@ -34,7 +34,7 @@ UPDATE DTU10_mss2 SET lon = ST_X(geom::geometry);
 	                                                                     
 ALTER TABLE dtu10_mss2
 ADD COLUMN newheight NUMERIC;
-UPDATE dtu10_mss2 SET newheight = height - 0.7;  													       
+UPDATE dtu10_mss2 SET newheight = height + 0.7;  													       
                                                                         
 /*We define the study areas of interest and create our tables */
 
