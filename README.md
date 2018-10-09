@@ -1,14 +1,15 @@
 # Obtaining a LAT model for a defined study area
 
-In order to provide calibration geoids for subsea surveying data post-processing in European projects that need a common **Zero level** I created this small workflow/guideline. Use with care.
+In order to provide calibration geoids for subsea surveying data post-processing in European projects that need a common **Zero level** I created this small workflow/guideline. Use with care. It is written to be used with Windows but implementing in Linux should be easy.
 
-## Prerequisites
 
+### Prerequisites
+
++ GUT (GOCE User Toolbox) , find it [here](https://earth.esa.int/web/guest/software-tools/gut/about-gut/overview)
 + You will need PostgreSQL+PostGIS, a relational database with geometry functions to rapidly access heights, study areas and make basic calculations
 + PgAdmin3 (PgAdmin 4 is still a little bit buggy) in order to manage your own database
 + QGIS (>LTR)
 + BLAST more info [here](http://www.blast-project.eu/), find a download link [here](http://blast-project.eu/media.php?file=604)
-+ GUT (GOCE User Toolbox) , find it [here](https://earth.esa.int/web/guest/software-tools/gut/about-gut/overview)
 
 ### Downloads and installs
 
@@ -40,27 +41,30 @@ In order to provide calibration geoids for subsea surveying data post-processing
 5. Download GUT , find it [here](https://earth.esa.int/web/guest/software-tools/gut/download-gut-here)
 	
 ### Get PostgreSQL running
-	5. Get PostgresSQL running by opening PGAdmin3 and creating a new database. Use a username and password you will 			remember. 
-	6. Create a new database called **DTU** by right clicking the already existing database >New Database... 
-	7. Click on dtu/Schemas/Tables(0). This is the place where our new tables will be listed. At the moment its empty. Go back to 		this step to check if you are running your steps accordingly.
-	8. Minimize PGadmin3, we will come back soon.
+
+5. Get PostgresSQL running by opening PGAdmin3 and creating a new database. 
+6. Create a new database called **DTU** by right clicking the already existing database >New Database... 
+7. Click on dtu/Schemas/Tables(0). This is the place where our new tables will be listed. At the moment its empty. Go back to 		this step to check if you are running your steps accordingly.
+8. Minimize PGadmin3, we will come back soon.
 	
 	
 ### Download the altimetry based Mean Sea Surface models from the Dennish Technical University
 
-3. Download and extract the DTU xyz files to be imported. In this script we will import DTU10, DTU 13 and DTU 15 with 2 min separation  from:	
-	```
-	ftp://ftp.space.dtu.dk/pub/DTU13/2_MIN/DTU13MSS_2min.xyz.zip
-	```
+1. Download and extract the DTU xyz files to be imported. In this script we will import DTU 15 with 2 min separation  from:	
+		```
+		ftp://ftp.space.dtu.dk/pub/DTU15/2_MIN/
+		```
+		
+### Transform them to Tide Free 
+
+1. Make use of GUT software to tranform the grid into Tide free.
 
 ### Make a CSV with MSS (Mean Sea Surface) values
 
 4. Mouse yourself into PgAdmin3 to dtu/Schemas/Tables(0) and run the following [QUERIES](./queries.sql) to create the database. 
 
 	![Alt text](/screenshot1.png?raw=true "Optional Title")
-	
-5. After succesfully running all the queries, keep going.
-	
+
 
 4. Open QGIS, on the browser, look for the ~~pink~~ blue elephant and right click on it, >Add new PostGIS connection
 	
