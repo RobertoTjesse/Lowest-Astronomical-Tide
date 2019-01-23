@@ -1,6 +1,6 @@
 # Obtaining a LAT model for a defined study area
 
-In order to provide calibration geoids for subsea surveying data post-processing in European projects that need a common **Zero level** I created this small workflow/guideline. Use with care. It is written to be used with Windows but implementing in Linux should be easy.
+In order to provide calibration geoids for subsea surveying in European waters I created this small workflow/guideline. Use with care. 
 
 
 ### Prerequisites
